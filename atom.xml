@@ -42,6 +42,31 @@
   </entry>
   
   <entry>
+    <title>单点登录</title>
+    <link href="http://yoursite.com/2021/09/17/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"/>
+    <id>http://yoursite.com/2021/09/17/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/</id>
+    <published>2021-09-17T06:28:12.000Z</published>
+    <updated>2021-09-18T10:16:06.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;单点登录&quot;&gt;&lt;a href=&quot;#单点登录&quot; class=&quot;headerlink&quot; title=&quot;单点登录&quot;&gt;&lt;/a&gt;单点登录&lt;/h1&gt;&lt;h2 id=&quot;一-单点登录的实现思路&quot;&gt;&lt;a href=&quot;#一-单点登录的实现思路&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="登录" scheme="http://yoursite.com/tags/%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mybatis-plus分页与多条件分页查询</title>
     <link href="http://yoursite.com/2021/04/23/mp%E5%88%86%E9%A1%B5/"/>
     <id>http://yoursite.com/2021/04/23/mp%E5%88%86%E9%A1%B5/</id>
