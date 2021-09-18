@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数学公式测试, Li">
+    <meta name="keywords" content="安卓笔记1, Li">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数学公式测试 | Li</title>
+    <title>安卓笔记1 | Li</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -192,12 +192,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s3.ax1x.com/2021/01/03/spHyG9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/%E4%BD%9F%E4%B8%BD%E5%A8%85/src%3Dhttp___liaolee.oss-cn-hangzhou.aliyuncs.com_img_2020_5_N7JnYr.jpg%26refer%3Dhttp___liaolee.oss-cn-hangzhou.aliyuncs.jfif')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数学公式测试</h1>
+                    <h1 class="description center-align post-title">安卓笔记1</h1>
                 </div>
             </div>
         </div>
@@ -219,8 +219,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">测试</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -231,8 +231,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8C%E6%B5%8E%E7%89%88%E9%AB%98%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-category">
-                                同济版高数（一）
+                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
+                                安卓
                             </a>
                         
                     </div>
@@ -244,7 +244,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-03
+                    2021-09-18
                 </div>
                 
 
@@ -253,7 +253,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    48
+                    172
                 </div>
                 
 
@@ -275,17 +275,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="使用-MathJax-渲染-LaTex-数学公式"><a href="#使用-MathJax-渲染-LaTex-数学公式" class="headerlink" title="使用 MathJax 渲染 LaTex 数学公式"></a>使用 MathJax 渲染 LaTex 数学公式</h2><p>   1.因需要cases环境，所以无法显示方程组</p>
+                <h1 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a>安卓</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/Blog/%E5%AE%89%E5%8D%93/9.18/image-20210918143859207.png"></p>
+<blockquote>
+<p>约束性布局</p>
+<pre><code>android.support.constraint.ConstraintLayout</code></pre>
+</blockquote>
+<blockquote>
+<p>线性布局</p>
+<p><code>LinearLayout</code></p>
+</blockquote>
 <ul>
-<li><p>$$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
-</li>
-<li><p>$\sum_{i=1}^n{a_i}$</p>
-</li>
-<li><p>$\lim_{x\to 0}lnx$</p>
-</li>
-<li><p>$\sqrt[x]{y}$</p>
-</li>
+<li>MainActivity已在AndroidManifest中注册，并设为LAUNCHER</li>
 </ul>
+<h2 id="一、布局"><a href="#一、布局" class="headerlink" title="一、布局"></a>一、布局</h2><h3 id="1、LinearLayout线性布局"><a href="#1、LinearLayout线性布局" class="headerlink" title="1、LinearLayout线性布局"></a>1、LinearLayout线性布局</h3><p><img src="https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/Blog/%E5%AE%89%E5%8D%93/9.18/image-20210918145756910.png"></p>
+<ol>
+<li><pre><code>wrap_content：内容匹配空间
+match_parent：匹配父空间</code></pre>
+</li>
+<li><p>LinearLayout的属性<strong>gravity</strong>，决定内部元素的位置</p>
+<hr>
+</li>
+</ol>
+<h3 id="2、RelativeLayout相对布局"><a href="#2、RelativeLayout相对布局" class="headerlink" title="2、RelativeLayout相对布局"></a>2、RelativeLayout相对布局</h3><p><img src="https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/Blog/%E5%AE%89%E5%8D%93/9.18/image-20210918163457366.png"></p>
+<h2 id="二、组件"><a href="#二、组件" class="headerlink" title="二、组件"></a>二、组件</h2><h3 id="1、TestView跳转"><a href="#1、TestView跳转" class="headerlink" title="1、TestView跳转"></a>1、TestView跳转</h3><ol>
+<li>声明btn</li>
+<li>findViewById从布局文件中找到btn，并赋值</li>
+<li>给声明的btn，设置一个点击监听器，参为匿名内部类new view.OnClickListener</li>
+<li>重写onClick方法，Intnet跳转到另一个Activity</li>
+</ol>
+<pre><code>@Override
+protected void onCreate(Bundle savedInstanceState) &#123;
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    mBtnTestView = findViewById(R.id.btn_testview);
+    mBtnTestView.setOnClickListener(new View.OnClickListener() &#123;
+        @Override
+        public void onClick(View view) &#123;
+            Intent intent = new Intent(MainActivity.this, TestViewActivity.class);
+            startActivity(intent);
+        &#125;
+    &#125;);
+&#125;</code></pre>
 
             </div>
             <hr/>
@@ -299,8 +329,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">测试</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -465,45 +495,47 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/04/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/">
+                <a href="/2021/09/18/%E5%AE%89%E5%8D%93%E7%AC%94%E8%AE%B01/">
                     <div class="card-image">
                         
-                        <img src="https://s3.ax1x.com/2021/01/04/sicKpV.jpg" class="responsive-img" alt="三角函数">
+                        <img src="https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/%E4%BD%9F%E4%B8%BD%E5%A8%85/src%3Dhttp___liaolee.oss-cn-hangzhou.aliyuncs.com_img_2020_5_N7JnYr.jpg%26refer%3Dhttp___liaolee.oss-cn-hangzhou.aliyuncs.jfif" class="responsive-img" alt="安卓笔记1">
                         
-                        <span class="card-title">三角函数</span>
+                        <span class="card-title">安卓笔记1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三角函数
+                            安卓概述，两张布局方式和TestView组件
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8C%E6%B5%8E%E7%89%88%E9%AB%98%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-category">
-                                    同济版高数（一）
+                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
+                                    安卓
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%85%AC%E5%BC%8F/">
-                        <span class="chip bg-color">公式</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -517,31 +549,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/05/redis%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/04/23/mp%E5%88%86%E9%A1%B5/">
                     <div class="card-image">
                         
+                        <img src="https://gitee.com/wen_lung_lee404/figurebed/raw/master/2021-4-23/1619175856555-c53c811f880411ebb6edd017c2d2eca2%20(1).jpg" class="responsive-img" alt="mybatis-plus分页与多条件分页查询">
                         
-                        <img src="https://gitee.com/wen_lung_lee404/figurebed/raw/master/2021-4-23/1619183876068-3.jpg" class="responsive-img" alt="redis笔记">
-                        
-                        <span class="card-title">redis笔记</span>
+                        <span class="card-title">mybatis-plus分页与多条件分页查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            今日内容1. redis
-    1. 概念
-    2. 下载安装
-    3. 命令操作
-        1. 数据结构
-    4. 持久化操作
-    5. 使用Java客户端操作redis
-Redis1. 概念： redis是一款
+                            分页
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-23
                             </span>
                         <span class="publish-author">
                             
@@ -558,8 +582,16 @@ Redis1. 概念： redis是一款
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BC%93%E5%AD%98/">
-                        <span class="chip bg-color">缓存</span>
+                    <a href="/tags/mybatis-plus/">
+                        <span class="chip bg-color">mybatis-plus</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E9%A1%B5/">
+                        <span class="chip bg-color">分页</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%9A%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2/">
+                        <span class="chip bg-color">多条件查询</span>
                     </a>
                     
                 </div>
@@ -603,13 +635,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
