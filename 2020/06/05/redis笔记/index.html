@@ -192,7 +192,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/wen_lung_lee404/figurebed/raw/master/2021-4-23/1619183876068-3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/Blog/java/redis.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -507,8 +507,11 @@
                jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);
             //3. 关闭连接
             jedis.close();</code></pre>
-<p>​<br>​    6. Jedis操作各种redis中的数据结构<br>​            1) 字符串类型 string<br>​                set<br>​                get//1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                //存储<br>​                jedis.set(“username”,”zhangsan”);<br>​                //获取<br>​                String username = jedis.get(“username”);<br>​                System.out.println(username);<br>​<br>                //可以使用setex()方法存储可以指定过期时间的 key value<br>                jedis.setex(“activecode”,20,”hehe”);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</p>
-<pre><code>            //3. 关闭连接
+<p>​<br>    6. Jedis操作各种redis中的数据结构<br>            1) 字符串类型 string<br>                set<br>                get//1. 获取连接<br>                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>                //2. 操作<br>                //存储<br>                jedis.set(“username”,”zhangsan”);<br>                //获取<br>                String username = jedis.get(“username”);<br>                System.out.println(username);</p>
+<pre><code>            //可以使用setex()方法存储可以指定过期时间的 key value
+            jedis.setex(&quot;activecode&quot;,20,&quot;hehe&quot;);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对
+
+            //3. 关闭连接
             jedis.close();
 
         2) 哈希类型 hash ： map格式  
@@ -580,8 +583,12 @@
             //1. 获取连接
             Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
             //2. 操作</code></pre>
-<p>​<br>​                // set 存储<br>​                jedis.sadd(“myset”,”java”,”php”,”c++”);<br>​<br>                // set 获取<br>                Set<String> myset = jedis.smembers(“myset”);<br>                System.out.println(myset);</p>
-<pre><code>            //3. 关闭连接
+<p>​<br>                // set 存储<br>                jedis.sadd(“myset”,”java”,”php”,”c++”);</p>
+<pre><code>            // set 获取
+            Set&lt;String&gt; myset = jedis.smembers(&quot;myset&quot;);
+            System.out.println(myset);
+
+            //3. 关闭连接
             jedis.close();
         5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序
             zadd
@@ -599,13 +606,20 @@
             Set&lt;String&gt; mysortedset = jedis.zrange(&quot;mysortedset&quot;, 0, -1);
 
             System.out.println(mysortedset);</code></pre>
-<p>​<br>​                //3. 关闭连接<br>​                jedis.close();</p>
-<p>​<br>​        * jedis连接池： JedisPool<br>​            * 使用：<br>​                1. 创建JedisPool连接池对象<br>​                2. 调用方法 getResource()方法获取Jedis连接<br>​                    //0.创建一个配置对象<br>​<br>                    JedisPoolConfig config = new JedisPoolConfig();<br>                    config.setMaxTotal(50);<br>                    config.setMaxIdle(10);</p>
-<pre><code>                //1.创建Jedis连接池对象
+<p>​<br>                //3. 关闭连接<br>                jedis.close();</p>
+<p>​<br>        * jedis连接池： JedisPool<br>            * 使用：<br>                1. 创建JedisPool连接池对象<br>                2. 调用方法 getResource()方法获取Jedis连接<br>                    //0.创建一个配置对象</p>
+<pre><code>                JedisPoolConfig config = new JedisPoolConfig();
+                config.setMaxTotal(50);
+                config.setMaxIdle(10);
+
+                //1.创建Jedis连接池对象
 
                 JedisPool jedisPool = new JedisPool(config,&quot;localhost&quot;,6379);</code></pre>
-<p>​<br>​                    //2.获取连接<br>​                    Jedis jedis = jedisPool.getResource();<br>​                    //3. 使用<br>​                    jedis.set(“hehe”,”heihei”);<br>​<br>                    //4. 关闭 归还到连接池中<br>                    jedis.close();</p>
-<pre><code>        * 连接池工具类
+<p>​<br>                    //2.获取连接<br>                    Jedis jedis = jedisPool.getResource();<br>                    //3. 使用<br>                    jedis.set(“hehe”,”heihei”);</p>
+<pre><code>                //4. 关闭 归还到连接池中
+                jedis.close();
+
+        * 连接池工具类
             public class JedisPoolUtils &#123;
 
                 private static JedisPool jedisPool;
@@ -628,7 +642,14 @@
 
                     //初始化JedisPool
                     jedisPool = new JedisPool(config,pro.getProperty(&quot;host&quot;),Integer.parseInt(pro.getProperty(&quot;port&quot;)));</code></pre>
-<p>​<br>​                    }<br>​<br>                    /**<br>                     * 获取连接方法<br>                     */<br>                    public static Jedis getJedis(){<br>                        return jedisPool.getResource();<br>                    }<br>                }</p>
+<p>​<br>                    }</p>
+<pre><code>                /**
+                 * 获取连接方法
+                 */
+                public static Jedis getJedis()&#123;
+                    return jedisPool.getResource();
+                &#125;
+            &#125;</code></pre>
 <h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><pre><code>案例需求：
     1. 提供index.html页面，页面中有一个省份 下拉列表
     2. 当 页面加载完成后 发送ajax请求，加载所有省份
@@ -824,7 +845,7 @@
                 <a href="/2021/01/03/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/">
                     <div class="card-image">
                         
-                        <img src="https://s3.ax1x.com/2021/01/03/spHyG9.jpg" class="responsive-img" alt="数学公式测试">
+                        <img src="https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/Blog/java/math.jpeg" class="responsive-img" alt="数学公式测试">
                         
                         <span class="card-title">数学公式测试</span>
                     </div>
@@ -843,8 +864,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8C%E6%B5%8E%E7%89%88%E9%AB%98%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-category">
-                                    同济版高数（一）
+                            <a href="/categories/%E9%AB%98%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-category">
+                                    高数（一）
                                 </a>
                             
                             
@@ -872,8 +893,7 @@
                 <a href="/2020/06/05/Filter&Listener%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
-                        
-                        <img src="https://gitee.com/wen_lung_lee404/figurebed/raw/master/2021-4-23/1619183876081-5.jpg" class="responsive-img" alt="Filter&amp;Listener笔记">
+                        <img src="https://edu-teacher-li.oss-cn-beijing.aliyuncs.com/MyImg/Blog/java/filter.jpeg" class="responsive-img" alt="Filter&amp;Listener笔记">
                         
                         <span class="card-title">Filter&amp;Listener笔记</span>
                     </div>
@@ -881,11 +901,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            今日内容1. Filter：过滤器
-2. Listener：监听器
-Filter：过滤器1. 概念：
-    * 生活中的过滤器：净水器,空气净化器，土匪、
-    * web中的过滤器：当访问服务器的资源时，过滤器可以将请求拦截下来，完成
+                            Filter和Listener的简单入门
                         
                     </div>
                     <div class="publish-info">
@@ -907,8 +923,8 @@ Filter：过滤器1. 概念：
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tomcat/">
-                        <span class="chip bg-color">Tomcat</span>
+                    <a href="/tags/Filter%E5%92%8CListener/">
+                        <span class="chip bg-color">Filter和Listener</span>
                     </a>
                     
                 </div>
@@ -968,7 +984,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">19.2k</span>&nbsp;字
+                class="white-color">19.6k</span>&nbsp;字
             
             
             
